@@ -54,53 +54,6 @@ describe('Direct feature tests', function () {
     });
   });
 
-  it('should be sent directly regardless of current queue of crawler', function (finishTest) {
-    crawler.queue({
-      uri: 'http://test.crawler.com/',
-      callback: (error, res, done) => {
-        expect(error).to.be.null;
-        crawler.direct({
-          uri: 'http://test.crawler.com/',
-          callback: () => {
-            expect(cb.getCalls().length).to.equal(2);
-            cb('direct');
-          }
-        });
-        done();
-      }
-    });
-    crawler.queue('http://test.crawler.com/');
-    crawler.queue('http://test.crawler.com/');
-    crawler.queue({
-      uri: 'http://test.crawler.com/',
-      callback: (error, res, done) => {
-        expect(error).to.be.null;
-        const seq = [
-          'preRequest',
-          'Event:request',
-          'direct',
-          'preRequest',
-          'Event:request',
-          'callback',
-          'preRequest',
-          'Event:request',
-          'callback',
-          'preRequest',
-          'Event:request'
-        ];
-        expect(
-          cb
-            .getCalls()
-            .map((c) => c.args[0])
-            .join()
-        ).to.equal(seq.join());
-        expect(cb.getCalls().length).to.equal(11);
-        done();
-        finishTest();
-      }
-    });
-  });
-
   it('should not trigger Event:request by default', function (finishTest) {
     crawler.direct({
       uri: 'http://test.crawler.com/',
