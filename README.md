@@ -43,9 +43,7 @@ Thanks to [Authuir](https://github.com/authuir), we have a [Chinese](http://node
   - [Slow down](#slow-down)
   - [Custom parameters](#custom-parameters)
   - [Raw body](#raw-body)
-  - [preRequest](#prerequest)
 - [Advanced](#advanced)
-  - [Send request directly](#send-request-directly)
   - [Work with bottleneck](#work-with-bottleneck)
   - [Class:Crawler](#classcrawler)
     - [Event: 'schedule'](#event-schedule)
@@ -197,58 +195,7 @@ c.queue({
 });
 ```
 
-## preRequest
-
-If you want to do something either synchronously or asynchronously before each request, you can try the code below. Note that direct requests won't trigger preRequest.
-
-```js
-var c = new Crawler({
-  preRequest: function (options, done) {
-    // 'options' here is not the 'options' you pass to 'c.queue', instead, it's the options that is going to be passed to 'request' module
-    console.log(options);
-    // when done is called, the request will start
-    done();
-  },
-  callback: function (err, res, done) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(res.statusCode);
-    }
-  }
-});
-
-c.queue({
-  uri: 'http://www.google.com',
-  // this will override the 'preRequest' defined in crawler
-  preRequest: function (options, done) {
-    setTimeout(function () {
-      console.log(options);
-      done();
-    }, 1000);
-  }
-});
-```
-
 # Advanced
-
-## Send request directly
-
-In case you want to send a request directly without going through the scheduler in Crawler, try the code below. `direct` takes the same options as `queue`, please refer to [options](#options-reference) for detail. The difference is when calling `direct`, `callback` must be defined explicitly, with two arguments `error` and `response`, which are the same as that of `callback` of method `queue`.
-
-```js
-crawler.direct({
-  uri: 'http://www.google.com',
-  skipEventRequest: false, // default to true, direct requests won't trigger Event:'request'
-  callback: function (error, response) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log(response.statusCode);
-    }
-  }
-});
-```
 
 ## Work with bottleneck
 
