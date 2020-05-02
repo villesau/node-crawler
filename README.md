@@ -300,13 +300,6 @@ c.queue({
 });
 ```
 
-Normally, all limiter instances in limiter cluster in crawler are instantiated with options specified in crawler constructor. You can change property of any limiter by calling the code below. Currently, we only support changing property 'rateLimit' of limiter. Note that the default limiter can be accessed by `c.setLimiterProperty('default', 'rateLimit', 3000)`. We strongly recommend that you leave limiters unchanged after their instantiation unless you know clearly what you are doing.
-
-```js
-var c = new Crawler({});
-c.setLimiterProperty('limiterName', 'propertyName', value);
-```
-
 ## Class:Crawler
 
 ### Event: 'schedule'
@@ -400,7 +393,6 @@ the request() method.
 
 - `options.maxConnections`: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Size of the worker pool (Default 10).
 - `options.rateLimit`: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of milliseconds to delay between each requests (Default 0).
-- `options.priorityRange`: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Range of acceptable priorities starting from 0 (Default 10).
 - `options.priority`: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Priority of this request (Default 5). Low values have higher priority.
 
 ### Retry options

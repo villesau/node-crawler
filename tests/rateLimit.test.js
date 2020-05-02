@@ -101,25 +101,5 @@ describe('rateLimit tests', function () {
         done();
       });
     });
-
-    it('should be able to modify rateLimit', function (done) {
-      c.setLimiterProperty('default', 'rateLimit', 500);
-      for (var i = 0; i < 5; i++) {
-        c.queue('http://nockHost/status/200');
-      }
-
-      c.on('drain', function () {
-        expect(tsArrs.length).to.equal(5);
-        for (var i = 1; i < tsArrs.length; i++) {
-          var interval = tsArrs[i] - tsArrs[i - 1];
-          var diff = Math.abs(interval - 500);
-          // setTimeout() in nodejs doesn't guarantee action will occur at time(timestamp) you assigned
-          // so 10% of rateLimit time will be given to assert
-          expect(diff).to.be.at.most(50);
-        }
-
-        done();
-      });
-    });
   });
 });
