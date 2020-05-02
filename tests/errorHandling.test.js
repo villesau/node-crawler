@@ -53,7 +53,6 @@ describe('Errors', function () {
         uri: 'http://test.crawler.com/delay/1',
         callback: (error, response, done) => {
           expect(error).to.exist;
-          expect(response.options.retries).to.equal(0);
           done();
           finishTest();
         }
@@ -68,8 +67,10 @@ describe('Errors', function () {
         uri: 'http://test.crawler.com/delay/1',
         callback: (error, response, done) => {
           expect(error).to.exist;
-          expect(error.code === 'ETIMEDOUT' || error.code === 'ESOCKETTIMEDOUT')
-            .to.be.true;
+          expect(
+            error.error.code === 'ETIMEDOUT' ||
+              error.error.code === 'ESOCKETTIMEDOUT'
+          ).to.be.true;
           done();
           finishTest();
         }
