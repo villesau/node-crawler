@@ -8,11 +8,11 @@ os:
   - osx
 
 script:
-  - "npm run hint"
-  - "npm run test"
-  - "npm run cover"
+  - 'npm run hint'
+  - 'npm run test'
+  - 'npm run cover'
 
-after_script: "cat ./coverage/lcov.info | coveralls"
+after_script: 'cat ./coverage/lcov.info | coveralls'
 
 matrix:
   allow_failures:

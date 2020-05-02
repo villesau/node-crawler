@@ -9,7 +9,8 @@
   "scripts": {
     "hint": "eslint ./lib/*.js ./tests/*.js",
     "test": "mocha --timeout=15000 tests/*.test.js",
-    "cover": "nyc --reporter=lcovonly --reporter=text --reporter=text-summary mocha --timeout=15000 --reporter spec tests/*.test.js"
+    "cover": "nyc --reporter=lcovonly --reporter=text --reporter=text-summary mocha --timeout=15000 --reporter spec tests/*.test.js",
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "mocha-testdata": "^1.2.0",
     "nock": "^10.0.6",
     "nyc": "^13.1.0",
+    "prettier": "^2.0.5",
     "sinon": "^7.0.0",
     "whacko": "^0.19.1"
   },

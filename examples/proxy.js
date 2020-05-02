@@ -1,8 +1,7 @@
-
-'use strict'
+'use strict';
 
 const Crawler = require('..');
 
-/* 
+/*
  *
  */
