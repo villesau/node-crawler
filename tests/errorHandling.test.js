@@ -44,7 +44,7 @@ describe('Errors', function () {
       timeout: 500,
       retryTimeout: 1000,
       retries: 2,
-      jquery: false,
+      jquery: false
     });
 
     it('should retry after timeout', function (finishTest) {
@@ -56,7 +56,7 @@ describe('Errors', function () {
           expect(response.options.retries).to.equal(0);
           done();
           finishTest();
-        },
+        }
       };
       crawler.queue(options);
       expect(options.retries).to.equal(2);
@@ -72,7 +72,7 @@ describe('Errors', function () {
             .to.be.true;
           done();
           finishTest();
-        },
+        }
       });
     });
   });
@@ -88,7 +88,7 @@ describe('Errors', function () {
           expect(response.statusCode).to.equal(400);
           done();
           finishTest();
-        },
+        }
       });
     });
 
@@ -100,7 +100,7 @@ describe('Errors', function () {
           expect(response.statusCode).to.equal(401);
           done();
           finishTest();
-        },
+        }
       });
     });
 
@@ -112,7 +112,7 @@ describe('Errors', function () {
           expect(response.statusCode).to.equal(403);
           done();
           finishTest();
-        },
+        }
       });
     });
 
@@ -124,7 +124,7 @@ describe('Errors', function () {
           expect(response.statusCode).to.equal(404);
           done();
           finishTest();
-        },
+        }
       });
     });
 
@@ -136,7 +136,7 @@ describe('Errors', function () {
           expect(response.statusCode).to.equal(500);
           done();
           finishTest();
-        },
+        }
       });
     });
 
@@ -147,7 +147,7 @@ describe('Errors', function () {
           expect(error).to.be.null;
           done();
           finishTest();
-        },
+        }
       });
     });
 
@@ -159,7 +159,7 @@ describe('Errors', function () {
           expect(response).not.to.be.null;
           done();
           finishTest();
-        },
+        }
       });
     });
 
@@ -172,7 +172,7 @@ describe('Errors', function () {
           expect(response).not.to.be.undefined;
           done();
           finishTest();
-        },
+        }
       });
     });
   });

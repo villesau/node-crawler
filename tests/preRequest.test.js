@@ -30,7 +30,7 @@ describe('preRequest feature tests', function () {
           cb('preRequest');
           done();
         }, 50);
-      },
+      }
     });
     crawler.queue({
       uri: 'http://test.crawler.com/',
@@ -40,7 +40,7 @@ describe('preRequest feature tests', function () {
         expect(cb.getCalls()[0].args[0]).to.equal('preRequest');
         done();
         finishTest();
-      },
+      }
     });
   });
 
@@ -60,7 +60,7 @@ describe('preRequest feature tests', function () {
         expect(cb.getCalls()[0].args[0]).to.equal('preRequest');
         done();
         finishTest();
-      },
+      }
     });
   });
 
@@ -76,7 +76,7 @@ describe('preRequest feature tests', function () {
         expect(error).to.be.null;
         cb('callback');
         done();
-      },
+      }
     });
     const seq = [];
     for (var i = 0; i < 5; i++) {
@@ -98,7 +98,7 @@ describe('preRequest feature tests', function () {
         ).to.equal(seq.join());
         done();
         finishTest();
-      },
+      }
     });
   });
 
@@ -116,7 +116,7 @@ describe('preRequest feature tests', function () {
         expect(cb.getCalls().length).to.equal(4);
         done();
         finishTest();
-      },
+      }
     });
     crawler.queue('http://test.crawler.com/');
   });
@@ -137,7 +137,7 @@ describe('preRequest feature tests', function () {
         expect(cb.getCalls().length).to.equal(1);
         done();
         finishTest();
-      },
+      }
     });
     crawler.queue('http://test.crawler.com/');
   });
@@ -162,7 +162,7 @@ describe('preRequest feature tests', function () {
       },
       callback: () => {
         expect(null).to.equal(1);
-      },
+      }
     });
     crawler.queue('http://test.crawler.com/');
   });
@@ -190,7 +190,7 @@ describe('preRequest feature tests', function () {
       },
       callback: () => {
         expect(null).to.equal(1);
-      },
+      }
     });
     crawler.queue('http://test.crawler.com/');
   });

@@ -32,7 +32,7 @@ describe('Simple test', function () {
         expect(typeof result.body).to.equal('string');
 
         done();
-      },
+      }
     });
 
     c.on('drain', done);
@@ -46,7 +46,7 @@ describe('Simple test', function () {
         expect(err).to.be.null;
 
         done();
-      },
+      }
     });
     c.on('drain', function () {
       expect(spy.calledTwice).to.be.true;
@@ -69,8 +69,8 @@ describe('Simple test', function () {
           expect(result.$).not.to.be.null;
           expect(typeof result.body).to.equal('string');
           done();
-        },
-      },
+        }
+      }
     ]);
 
     c.on('drain', done);

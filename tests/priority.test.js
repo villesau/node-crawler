@@ -24,7 +24,7 @@ describe('Priority test', function () {
 
     c = new Crawler({
       jquery: false,
-      maxConnections: 1,
+      maxConnections: 1
     });
 
     c.queue([
@@ -35,8 +35,8 @@ describe('Priority test', function () {
           spf[cnt++] = 3;
 
           done();
-        },
-      },
+        }
+      }
     ]);
 
     c.queue([
@@ -47,8 +47,8 @@ describe('Priority test', function () {
           spf[cnt++] = 4;
 
           done();
-        },
-      },
+        }
+      }
     ]);
 
     c.queue([
@@ -59,8 +59,8 @@ describe('Priority test', function () {
           spf[cnt++] = 5;
 
           done();
-        },
-      },
+        }
+      }
     ]);
 
     c.queue([
@@ -71,8 +71,8 @@ describe('Priority test', function () {
           spf[cnt++] = 6;
 
           done();
-        },
-      },
+        }
+      }
     ]);
   });
 

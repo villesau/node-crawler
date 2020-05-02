@@ -21,7 +21,7 @@ describe('Request tests', function () {
     crawler = new Crawler({
       retries: 0,
       json: true,
-      jQuery: false,
+      jQuery: false
     });
 
     scope = nock(origin).get(path).reply(200).persist();
@@ -45,7 +45,7 @@ describe('Request tests', function () {
         expect(res.statusCode).to.eql(200);
         done();
         end();
-      },
+      }
     });
   });
 
@@ -60,12 +60,12 @@ describe('Request tests', function () {
 
     crawler.queue({
       uri: `${origin}${path}`,
-      callback: callback,
+      callback: callback
     });
 
     crawler.queue({
       uri: `${origin}${path}`,
-      callback: callback,
+      callback: callback
     });
   });
 
@@ -77,7 +77,7 @@ describe('Request tests', function () {
         expect(res.body['accept-encoding']).to.match(/gzip/);
         done();
         end();
-      },
+      }
     });
   });
 
@@ -91,7 +91,7 @@ describe('Request tests', function () {
         expect(res.body['user-agent']).to.eql(ua);
         done();
         end();
-      },
+      }
     });
   });
 
@@ -105,12 +105,12 @@ describe('Request tests', function () {
         expect(res.body['user-agent']).to.equal('foo/bar');
         done();
         end();
-      },
+      }
     });
 
     crawler.queue({
       uri: `${origin}${headerPath}`,
-      headers: { 'User-Agent': 'foo/bar' },
+      headers: { 'User-Agent': 'foo/bar' }
     });
   });
 
@@ -124,7 +124,7 @@ describe('Request tests', function () {
         expect(res.body['user-agent']).to.equal('foo/bar');
         done();
         end();
-      },
+      }
     });
 
     crawler.queue({ uri: `${origin}${headerPath}`, userAgent: 'foo/bar' });
@@ -141,7 +141,7 @@ describe('Request tests', function () {
         expect(res.body.referer).to.equal(referer);
         done();
         end();
-      },
+      }
     });
   });
 });

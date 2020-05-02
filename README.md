@@ -96,7 +96,7 @@ var c = new Crawler({
       console.log($('title').text());
     }
     done();
-  },
+  }
 });
 
 // Queue just one URL, with default callback
@@ -119,15 +119,15 @@ c.queue([
         console.log('Grabbed', res.body.length, 'bytes');
       }
       done();
-    },
-  },
+    }
+  }
 ]);
 
 // Queue some HTML code directly without grabbing (mostly for tests)
 c.queue([
   {
-    html: '<p>This is a <strong>test</strong></p>',
-  },
+    html: '<p>This is a <strong>test</strong></p>'
+  }
 ]);
 ```
 
@@ -143,7 +143,7 @@ var c = new Crawler({
   callback: function (err, res, done) {
     console.log(res.$('title').text());
     done();
-  },
+  }
 });
 
 c.queue(tasks); //between two tasks, minimum time gap is 1000 (ms)
@@ -158,7 +158,7 @@ c.queue({
   uri: 'http://www.google.com',
   parameter1: 'value1',
   parameter2: 'value2',
-  parameter3: 'value3',
+  parameter3: 'value3'
 });
 ```
 
@@ -189,12 +189,12 @@ var c = new Crawler({
     }
 
     done();
-  },
+  }
 });
 
 c.queue({
   uri: 'https://nodejs.org/static/images/logos/nodejs-1920x1200.png',
-  filename: 'nodejs-1920x1200.png',
+  filename: 'nodejs-1920x1200.png'
 });
 ```
 
@@ -216,7 +216,7 @@ var c = new Crawler({
     } else {
       console.log(res.statusCode);
     }
-  },
+  }
 });
 
 c.queue({
@@ -227,7 +227,7 @@ c.queue({
       console.log(options);
       done();
     }, 1000);
-  },
+  }
 });
 ```
 
@@ -247,7 +247,7 @@ crawler.direct({
     } else {
       console.log(response.statusCode);
     }
-  },
+  }
 });
 ```
 
@@ -269,7 +269,7 @@ var c = new Crawler({
       console.log($('title').text());
     }
     done();
-  },
+  }
 });
 
 // if you want to crawl some website with 2000ms gap between requests
@@ -281,22 +281,22 @@ c.queue('http://www.somewebsite.com/page/3');
 c.queue({
   uri: 'http://www.somewebsite.com/page/1',
   limiter: 'proxy_1',
-  proxy: 'proxy_1',
+  proxy: 'proxy_1'
 });
 c.queue({
   uri: 'http://www.somewebsite.com/page/2',
   limiter: 'proxy_2',
-  proxy: 'proxy_2',
+  proxy: 'proxy_2'
 });
 c.queue({
   uri: 'http://www.somewebsite.com/page/3',
   limiter: 'proxy_3',
-  proxy: 'proxy_3',
+  proxy: 'proxy_3'
 });
 c.queue({
   uri: 'http://www.somewebsite.com/page/4',
   limiter: 'proxy_1',
-  proxy: 'proxy_1',
+  proxy: 'proxy_1'
 });
 ```
 
@@ -442,7 +442,7 @@ var c = new Crawler({
   strictSSL: true,
   agentOptions: {
     socksHost: 'localhost',
-    socksPort: 9050,
+    socksPort: 9050
   },
   // debug: true,
   callback: function (error, res, done) {
@@ -452,7 +452,7 @@ var c = new Crawler({
       //
     }
     done();
-  },
+  }
 });
 ```
 
@@ -499,7 +499,7 @@ var jsdom = require('jsdom');
 var Crawler = require('crawler');
 
 var c = new Crawler({
-  jQuery: jsdom,
+  jQuery: jsdom
 });
 ```
 

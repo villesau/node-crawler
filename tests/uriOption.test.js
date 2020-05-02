@@ -23,7 +23,7 @@ describe('Uri Options', function () {
         expect(error).to.be.null;
         done();
         finishTest();
-      },
+      }
     });
   });
 
@@ -37,7 +37,7 @@ describe('Uri Options', function () {
         expect(error).to.be.null;
         done();
         finishTest();
-      },
+      }
     });
   });
 
@@ -50,7 +50,7 @@ describe('Uri Options', function () {
         expect(push.calledOnce).to.be.true;
         done();
         finishTest();
-      },
+      }
     });
   });
 });

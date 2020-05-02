@@ -18,13 +18,13 @@ const Crawler = require('crawler');
 // for global
 new Crawler({
   rateLimit: 1000,
-  proxy: 'http://proxy.example.com',
+  proxy: 'http://proxy.example.com'
 });
 
 //for just one task
 Crawler.queue({
   uri: 'http://www.example.com',
-  proxy: 'http://proxy.example.com',
+  proxy: 'http://proxy.example.com'
 });
 ```
 
@@ -47,14 +47,14 @@ let crawler = new Crawler({
       fs.createWriteStream(res.options.filename).write(res.body);
     }
     done();
-  },
+  }
 });
 
 crawler.queue({
   uri: 'http://www.example.com/image.jpg',
   filename: 'myImage.jpg',
   encoding: null,
-  jQuery: false,
+  jQuery: false
 });
 ```
 

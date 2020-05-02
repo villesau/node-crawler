@@ -31,7 +31,7 @@ describe('Limiter tests', function () {
         expect(err).to.be.equal(null);
         expect(result.statusCode).to.equal(200);
         done();
-      },
+      }
     });
     c.on('request', () => tsArrs.push(Date.now()));
   });

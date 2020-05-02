@@ -17,8 +17,8 @@ describe('Callback test', function () {
       retries: 0,
       timeout: 100,
       logger: {
-        log: () => {},
-      },
+        log: () => {}
+      }
     });
   });
 
@@ -28,7 +28,7 @@ describe('Callback test', function () {
 
   it('should end as expected without callback', function (done) {
     nock(url).get('/get').reply(200, '<html></html>', {
-      'Content-Type': 'text/html',
+      'Content-Type': 'text/html'
     });
 
     crawler.on('drain', done);
@@ -47,7 +47,7 @@ describe('Callback test', function () {
       .delayBody(500)
       //.socketDelay(2000)
       .reply(200, '<html></html>', {
-        'Content-Type': 'text/html',
+        'Content-Type': 'text/html'
       });
 
     crawler.on('drain', done);
@@ -56,7 +56,7 @@ describe('Callback test', function () {
 
   it('should end as expected without callback when encoding error', function (done) {
     nock(url).get('/get').reply(200, '<html></html>', {
-      'Content-Type': 'text/html',
+      'Content-Type': 'text/html'
     });
 
     crawler._doEncoding = function () {

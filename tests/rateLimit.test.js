@@ -31,7 +31,7 @@ describe('rateLimit tests', function () {
         expect(err).to.be.equal(null);
         expect(result.statusCode).to.equal(200);
         done();
-      },
+      }
     });
     c.on('request', () => tsArrs.push(Date.now()));
   });
@@ -63,7 +63,7 @@ describe('rateLimit tests', function () {
           expect(tsArrs[1] - tsArrs[0]).to.be.least(450);
 
           testDone();
-        },
+        }
       });
     });
   });

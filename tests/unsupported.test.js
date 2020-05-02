@@ -12,7 +12,7 @@ describe('Unsupported function test', function () {
       key
     ) {
       const opt = {
-        maxConnections: 10,
+        maxConnections: 10
       };
 
       opt[key] = {};

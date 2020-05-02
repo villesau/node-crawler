@@ -34,7 +34,7 @@ describe('Direct feature tests', function () {
           cb('callback');
         }
         done();
-      },
+      }
     });
     crawler.on('request', () => {
       cb('Event:request');
@@ -50,7 +50,7 @@ describe('Direct feature tests', function () {
         expect(res.body).to.equal('ok');
         expect(cb.called).to.be.false;
         finishTest();
-      },
+      }
     });
   });
 
@@ -64,10 +64,10 @@ describe('Direct feature tests', function () {
           callback: () => {
             expect(cb.getCalls().length).to.equal(2);
             cb('direct');
-          },
+          }
         });
         done();
-      },
+      }
     });
     crawler.queue('http://test.crawler.com/');
     crawler.queue('http://test.crawler.com/');
@@ -86,7 +86,7 @@ describe('Direct feature tests', function () {
           'Event:request',
           'callback',
           'preRequest',
-          'Event:request',
+          'Event:request'
         ];
         expect(
           cb
@@ -97,7 +97,7 @@ describe('Direct feature tests', function () {
         expect(cb.getCalls().length).to.equal(11);
         done();
         finishTest();
-      },
+      }
     });
   });
 
@@ -110,7 +110,7 @@ describe('Direct feature tests', function () {
         expect(res.body).to.equal('ok');
         expect(cb.called).to.be.false;
         finishTest();
-      },
+      }
     });
   });
 
@@ -125,7 +125,7 @@ describe('Direct feature tests', function () {
         expect(cb.calledOnce).to.be.true;
         expect(cb.firstCall.args[0]).to.equal('Event:request');
         finishTest();
-      },
+      }
     });
   });
 });

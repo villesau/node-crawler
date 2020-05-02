@@ -28,7 +28,7 @@ describe('Cache features tests', function () {
           expect(result.statusCode).to.equal(200);
           expect(call.isDone()).to.be.true;
           done();
-        },
+        }
       });
 
       c.queue(httpTarget);
@@ -44,7 +44,7 @@ describe('Cache features tests', function () {
           expect(error).to.exist;
           expect(koScope.isDone()).to.be.true;
           done();
-        },
+        }
       });
 
       c.queue(httpTarget);
@@ -63,7 +63,7 @@ describe('Cache features tests', function () {
           expect(koScope.isDone()).to.be.true;
           scope.persist(false);
           done();
-        },
+        }
       });
 
       c.queue(httpTarget);

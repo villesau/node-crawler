@@ -20,8 +20,8 @@ describe('Jar Options', function () {
           {
             'Set-Cookie': `ping=pong; Domain=.crawler.com; Expires=${new Date(
               Date.now() + 86400000
-            ).toUTCString()}; Path=/`,
-          },
+            ).toUTCString()}; Path=/`
+          }
         ];
         return response;
       })
@@ -43,7 +43,7 @@ describe('Jar Options', function () {
 
   const crawler = new Crawler({
     jquery: false,
-    jar: jar,
+    jar: jar
   });
 
   it('should send with cookie when setting jar options', function (finishTest) {
@@ -56,7 +56,7 @@ describe('Jar Options', function () {
         );
         done();
         finishTest();
-      },
+      }
     });
   });
 
@@ -71,7 +71,7 @@ describe('Jar Options', function () {
         ).to.be.true;
         done();
         finishTest();
-      },
+      }
     });
   });
 });

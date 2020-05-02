@@ -27,8 +27,8 @@ describe('Jquery testing', function () {
               expect(error).to.be.null;
               expect(res.$('i').html()).to.equal('great!');
               done();
-            },
-          },
+            }
+          }
         ]);
       });
   });
@@ -41,7 +41,7 @@ describe('Jquery testing', function () {
           expect(error).to.be.null;
           expect(res.$('i').html()).to.equal('great!');
           done();
-        },
+        }
       });
       c.queue([{ html: '<p><i>great!</i></p>' }]);
     });
@@ -54,12 +54,12 @@ describe('Jquery testing', function () {
             expect(error).to.be.null;
             expect(res.$('i').html()).to.equal('great!');
             done();
-          },
+          }
         });
         c.queue([
           {
-            html: '<p><i>great!</i></p>',
-          },
+            html: '<p><i>great!</i></p>'
+          }
         ]);
       });
     given
@@ -71,7 +71,7 @@ describe('Jquery testing', function () {
             expect(error).to.be.null;
             expect(res.$('i').html()).to.equal('great!');
             done();
-          },
+          }
         });
         c.queue([{ html: '<p><i>great!</i></p>' }]);
       });
@@ -82,7 +82,7 @@ describe('Jquery testing', function () {
           expect(error).to.be.null;
           expect(res.$('i').html()).to.equal('great!');
           done();
-        },
+        }
       });
       c.queue([{ html: '<p><i>great!</i></p>' }]);
     });
@@ -93,7 +93,7 @@ describe('Jquery testing', function () {
           expect(error).to.be.null;
           expect(res.$).to.be.undefined;
           done();
-        },
+        }
       });
       c.queue([{ html: '<p><i>great!</i></p>' }]);
     });
@@ -106,7 +106,7 @@ describe('Jquery testing', function () {
             expect(error).to.be.null;
             expect(res.$).to.be.undefined;
             done();
-          },
+          }
         });
         c.queue([{ html: '<p><i>great!</i></p>' }]);
       });
@@ -121,7 +121,7 @@ describe('Jquery testing', function () {
               expect(error).to.be.null;
               expect(res.$('i').html()).to.equal('great!');
               done();
-            },
+            }
           });
           c.queue([{ html: '<p><i>great!</i></p>' }]);
         }
@@ -138,7 +138,7 @@ describe('Jquery testing', function () {
             expect(error).to.be.null;
             expect(res.$('i').html()).to.equal('great!');
             done();
-          },
+          }
         });
         c.queue([{ html: '<p><i>great!</i></p>' }]);
       });
@@ -151,7 +151,7 @@ describe('Jquery testing', function () {
           expect(res.options.jQuery).to.be.true;
           expect(res.options.jquery).to.be.undefined;
           next();
-        },
+        }
       });
 
       c.on('drain', done);
@@ -165,15 +165,15 @@ describe('Jquery testing', function () {
           expect(res.$).to.be.undefined;
           expect(res.options.jQuery).to.be.false;
           next();
-        },
+        }
       });
 
       c.on('drain', done);
       c.queue([
         {
           html: '<p><i>great!</i></p>',
-          jquery: false,
-        },
+          jquery: false
+        }
       ]);
     });
     it('should not inject jquery if jquery is set to undefined', function (done) {
@@ -184,7 +184,7 @@ describe('Jquery testing', function () {
           expect(res.$).to.be.undefined;
           expect(res.options.jQuery).to.be.undefined;
           next();
-        },
+        }
       });
 
       c.on('drain', done);
@@ -197,8 +197,8 @@ describe('Jquery testing', function () {
         name: 'cheerio',
         options: {
           normalizeWhitespace: true,
-          xmlMode: true,
-        },
+          xmlMode: true
+        }
       };
       c = new Crawler({
         maxConnections: 10,
@@ -207,7 +207,7 @@ describe('Jquery testing', function () {
           expect(error).to.be.null;
           expect(res.$('i').html()).to.equal('great!');
           next();
-        },
+        }
       });
 
       c.on('drain', done);
