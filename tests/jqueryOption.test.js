@@ -187,7 +187,7 @@ describe('Jquery testing', function () {
         }
       });
 
-      c.on('drain', done);
+      c.on('drain', () => done());
       c.queue([{ html: '<p><i>great!</i></p>' }]);
     });
   });
@@ -210,7 +210,9 @@ describe('Jquery testing', function () {
         }
       });
 
-      c.on('drain', done);
+      c.on('drain', () => {
+        done();
+      });
       c.queue([{ html: '<p><i>great!</i></p>' }]);
     });
   });

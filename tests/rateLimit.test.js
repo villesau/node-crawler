@@ -14,6 +14,7 @@ var tsArrs = [];
 
 describe('rateLimit tests', function () {
   before(function () {
+    tsArrs = [];
     nock.cleanAll();
   });
 
@@ -26,6 +27,7 @@ describe('rateLimit tests', function () {
   beforeEach(function () {
     c = new Crawler({
       jquery: false,
+      maxConnections: 1,
       rateLimit: 300,
       callback: function (err, result, done) {
         expect(err).to.be.equal(null);
@@ -33,7 +35,9 @@ describe('rateLimit tests', function () {
         done();
       }
     });
-    c.on('request', () => tsArrs.push(Date.now()));
+    c.on('request', () => {
+      tsArrs.push(Date.now())
+    });
   });
   // Clear
   afterEach(function () {
@@ -60,7 +64,7 @@ describe('rateLimit tests', function () {
           done();
 
           expect(tsArrs.length).to.equal(2);
-          expect(tsArrs[1] - tsArrs[0]).to.be.least(450);
+          expect(tsArrs[1] - tsArrs[0]).to.be.least(500);
 
           testDone();
         }

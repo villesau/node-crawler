@@ -56,7 +56,7 @@ describe('Request tests', function () {
       next();
     };
 
-    crawler.on('drain', done);
+    crawler.on('drain', () => done());
 
     crawler.queue({
       uri: `${origin}${path}`,
