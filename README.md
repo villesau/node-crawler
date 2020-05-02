@@ -49,7 +49,6 @@ Thanks to [Authuir](https://github.com/authuir), we have a [Chinese](http://node
   - [Work with bottleneck](#work-with-bottleneck)
   - [Class:Crawler](#classcrawler)
     - [Event: 'schedule'](#event-schedule)
-    - [Event: 'limiterChange'](#event-limiterchange)
     - [Event: 'request'](#event-request)
     - [Event: 'drain'](#event-drain)
     - [crawler.queue(uri|options)](#crawlerqueueurioptions)
@@ -313,11 +312,6 @@ crawler.on('schedule', function (options) {
   options.proxy = 'http://proxy:port';
 });
 ```
-
-### Event: 'limiterChange'
-
-- `options` [Options](#options-reference)
-- `limiter` [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Emitted when limiter has been changed.
 
