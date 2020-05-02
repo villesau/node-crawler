@@ -121,7 +121,7 @@ describe('preRequest feature tests', function () {
     crawler.queue('http://test.crawler.com/');
   });
 
-  it('when preRequest fail, should return error when error.op = \'fail\'', function (finishTest) {
+  it("when preRequest fail, should return error when error.op = 'fail'", function (finishTest) {
     crawler = new Crawler({
       jQuery: false,
       rateLimit: 20,
@@ -142,7 +142,7 @@ describe('preRequest feature tests', function () {
     crawler.queue('http://test.crawler.com/');
   });
 
-  it('when preRequest fail, callback should not be called when error.op = \'abort\'', function (finishTest) {
+  it("when preRequest fail, callback should not be called when error.op = 'abort'", function (finishTest) {
     crawler = new Crawler({
       jQuery: false,
       rateLimit: 20,
@@ -167,7 +167,7 @@ describe('preRequest feature tests', function () {
     crawler.queue('http://test.crawler.com/');
   });
 
-  it('when preRequest fail, should put request back in queue when error.op = \'queue\'', function (finishTest) {
+  it("when preRequest fail, should put request back in queue when error.op = 'queue'", function (finishTest) {
     let counter = 0;
     crawler = new Crawler({
       jQuery: false,
